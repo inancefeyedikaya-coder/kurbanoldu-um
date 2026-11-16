@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zeynep'e ❤️</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg,#ffd6e7,#ff9fcb,#f7b5ff);
+  font-family: Georgia, serif;
+  color: #8b2458;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 45px 20px;
+  max-width: 650px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-size: 17px;
+  margin-bottom: 45px;
+}
+
+.gift-area {
+  cursor: pointer;
+  margin: 70px auto 35px;
+  width: 180px;
+  height: 170px;
+  position: relative;
+}
+
+.gift {
+  width: 150px;
+  height: 110px;
+  background: #ff4081;
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px #b94c79;
+}
+
+.gift::before {
+  content: "";
+  position: absolute;
+  height: 110px;
+  width: 25px;
+  background: #ffe0ec;
+  left: 62px;
+}
+
+.lid {
+  width: 170px;
+  height: 30px;
+  background: #e91e63;
+  position: absolute;
+  top: 30px;
+  left: 5px;
+  border-radius: 7px;
+  transition: 0.8s;
+  z-index: 2;
+}
+
+.bow {
+  position: absolute;
+  top: 0;
+  left: 69px;
+  font-size: 35px;
+  z-index: 3;
+}
+
+.gift-area.open .lid {
+  transform: translateY(-65px) rotate(-15deg);
+}
+
+.gift-area.open .bow {
+  transform: translateY(-65px) rotate(-15deg);
+  transition: 0.8s;
+}
+
+.tap {
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.letter {
+  display: none;
+  background: #fff5fa;
+  border-radius: 20px;
+  padding: 28px 22px;
+  margin: 35px auto;
+  line-height: 1.9;
+  box-shadow: 0 8px 25px #c65c91;
+  animation: appear 1s ease;
+}
+
+.letter h2 {
+  margin-bottom: 20px;
+}
+
+.surprise {
+  display: none;
+  margin: 25px auto;
+}
+
+button {
+  border: none;
+  background: #e91e63;
+  color: white;
+  padding: 14px 25px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  box-shadow: 0 5px 15px #d66a99;
+}
+
+.final {
+  display: none;
+  background: #fff0f7;
+  padding: 25px;
+  border-radius: 20px;
+  margin-top: 25px;
+  line-height: 1.8;
+  animation: appear 1s ease;
+}
+
+.date {
+  margin-top: 35px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.heart {
+  position: fixed;
+  bottom: -30px;
+  animation: float 7s linear infinite;
+  pointer-events: none;
+  opacity: .7;
+}
+
+@keyframes float {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Biricik Zeynep'ime ❤️</h1>
+
+<p class="subtitle">
+Sana küçük bir sürpriz hazırladım...
+</p>
+
+<div class="gift-area" id="giftArea" onclick="openGift()">
+  <div class="bow">🎀</div>
+  <div class="lid"></div>
+  <div class="gift"></div>
+</div>
+
+<p class="tap" id="tapText">🎁 Kutuyu açmak için üzerine dokun</p>
+
+<div class="letter" id="letter">
+  <h2>Canım Zeynep'im ❤️</h2>
+
+  <p>
+  Belki bu sadece küçük bir internet sitesi ama
+  içinde sana anlatmak istediğim kocaman bir sevgi var.
+  </p>
+
+  <p>
+  Hayatıma girdiğinden beri birçok şey daha güzel.
+  Seninle konuşmak, gülmek, vakit geçirmek benim için
+  çok değerli.
+  </p>
+
+  <p>
+  Bazen kelimeler hissettiklerimi anlatmaya yetmiyor.
+  Ama bilmeni istiyorum ki benim için çok özelsin.
+  İyi ki hayatımdasın.
+  </p>
+
+  <p>
+  Seni çok seviyorum. ❤️
+  </p>
+
+  <button onclick="showSurprise()">Bir sürpriz daha var 💗</button>
+</div>
+
+<div class="final" id="final">
+  <h2>Bizim hikâyemiz... 💞</h2>
+
+  <p>
+  Bazı tarihler vardır, insanın aklında kalır.
+  Bizim hikâyemizde de unutmak istemediğim
+  güzel anlar var.
+  </p>
+
+  <div class="date">22 Temmuz ❤️</div>
+
+  <p>
+  İyi ki yollarımız yeniden kesişmiş.
+  Seninle daha nice güzel anılar biriktirmek istiyorum.
+  </p>
+
+  <h2 style="margin-top:25px">Seni çok seviyorum Zeynep ❤️</h2>
+</div>
+
+</div>
+
+<script>
+let opened = false;
+
+function openGift() {
+  if (opened) return;
+
+  opened = true;
+
+  document.getElementById("giftArea").classList.add("open");
+  document.getElementById("tapText").style.display = "none";
+
+  setTimeout(() => {
+    document.getElementById("letter").style.display = "block";
+  }, 800);
+}
+
+function showSurprise() {
+  document.getElementById("final").style.display = "block";
+  document.getElementById("final").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (15 + Math.random() * 20) + "px";
+  heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 10000);
+}
+
+setInterval(createHeart, 600);
+</script>
+
+</body>
+</html>
